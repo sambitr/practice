@@ -23,6 +23,14 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-${{ matrix.python-version }}-
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -30,4 +38,14 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -q
+          pytest -vv
+
+      - name: Remove __pycache__
+        if: always()
+        run: |
+          # remove compiled bytecode caches to keep workspace clean
+          find . -type d -name "__pycache__" -prune -exec rm -rf '{}' +
+          cd src
+          ls -lrt
+          cd test
+          ls -lrt
