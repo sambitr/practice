@@ -1,5 +1,5 @@
 import pytest
-from code.two_sum import two_sum
+from src.two_sum import two_sum
 
 @pytest.mark.parametrize("a,b,expected", [(2,3,5), (-1,1,0), (0,0,0)])
 def test_sum_param(a, b, expected):
