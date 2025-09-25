@@ -47,5 +47,5 @@ jobs:
           find . -type d -name "__pycache__" -prune -exec rm -rf '{}' +
           cd src
           ls -lrt
-          cd test
+          cd ../test
           ls -lrt
