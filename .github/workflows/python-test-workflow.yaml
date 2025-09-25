@@ -15,9 +15,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: list directories
-        run: ls -lrt
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -45,7 +42,3 @@ jobs:
         run: |
           # remove compiled bytecode caches to keep workspace clean
           find . -type d -name "__pycache__" -prune -exec rm -rf '{}' +
-          cd src
-          ls -lrt
-          cd ../test
-          ls -lrt
