@@ -33,7 +33,7 @@ jobs:
 
       - name: Run tests + coverage
         run: |
-          pytest --cov=src --cov-report=xml:coverage.xml --junitxml=pytest-results.xml -vv
+          pytest --cov=src --cov-report=xml:coverage.xml --junitxml=pytest-results.xml -vv --cov-fail-under=80
           
       - name: Upload coverage & test reports
         if: always()
