@@ -37,11 +37,9 @@ jobs:
           
       - name: Publish test results to GitHub Checks
         if: always()
-        uses: dorny/test-reporter@v1
+        uses: actions/upload-test-report@v2
         with:
-          name: pytest
           path: pytest-results.xml
-          reporter: junit
 
       - name: Upload coverage & test reports
         if: always()
