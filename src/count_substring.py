@@ -22,6 +22,6 @@ def count_substring(string, substring):
             break
         count += 1
         start += 1
-    print(count)
+    return count
 
-count_substring("ABCDCDC", "CDC")
+#count_substring("ABCDCDC", "CDC")
