@@ -33,18 +33,18 @@ class course:
         return value / len(self.students) if self.students else 0
             
 
-# if __name__ == "__main__":
-#     s1 = Student("Alice", 20, 80)
-#     s2 = Student("Bob", 22, 90)
-#     s3 = Student("Charlie", 23, 40)
-#     s4 = Student("Sam", 23, 40)
-#     c1 = course("Mathematics", 3)
-#     c1.add_student(s1)
-#     c1.add_student(s2)
-#     c1.add_student(s3)  
-#     c1.add_student(s4)  # This should indicate that the max capacity has been reached
+if __name__ == "__main__":
+    s1 = Student("Alice", 20, 80)
+    s2 = Student("Bob", 22, 90)
+    s3 = Student("Charlie", 23, 40)
+    s4 = Student("Sam", 23, 40)
+    c1 = course("Mathematics", 3)
+    c1.add_student(s1)
+    c1.add_student(s2)
+    c1.add_student(s3)  
+    c1.add_student(s4)  # This should indicate that the max capacity has been reached
 
-#     print(f"Average for the course: {c1.course_name} is: {c1.average_grade()}")
-# # print(s1.get_details())
+    print(f"Average for the course: {c1.course_name} is: {c1.average_grade()}")
+# print(s1.get_details())
 
-# # print(c1.course_details())
+# print(c1.course_details())
